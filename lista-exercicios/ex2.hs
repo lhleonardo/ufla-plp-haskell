@@ -8,4 +8,4 @@ maioresQueUmaMedia a b c =
     | c > media = 1
     | otherwise = 0
     where
-        media = div (a + b + c) 2
+        media = div (a + b + c) 3
