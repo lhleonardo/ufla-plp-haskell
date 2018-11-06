@@ -1,5 +1,13 @@
 remove_espacos :: String -> String
+remove_espacos [] = []
+remove_espacos (h:t)
+    | h == ' ' = ' ' : encontrar_valido t
+    | otherwise = h : remove_espacos t
 
--- guardar a antiga cabeça, a nova e calda. 
--- quando a antiga cabeça for vazia e a nova tbm, nao concateno, senao continua ok 
+encontrar_valido :: String -> String
+encontrar_valido (h:t) 
+    | h == ' ' = encontrar_valido t
+    | otherwise = h : remove_espacos t
 
+main = do
+    print $ remove_espacos "      Leonardo       Henrique  de  Braz"
